@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- 核心：适配所有移动设备的视口设置 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Jiaqi | Portfolio</title>
   <style>
@@ -11,28 +10,32 @@
       padding: 0;
       box-sizing: border-box;
     }
-    /* 页面铺满屏幕，垂直+水平居中核心代码 */
     html, body {
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: #1D1D1D;
     }
-    /* 文字容器：垂直排列，统一间距 */
+    /* 核心布局：主内容居中，联系方式自动贴底 */
     .container {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px; /* 文字行间距 */
-      padding: 0 20px; /* 防止手机屏幕文字贴边 */
-      max-width: 90%; /* 限制最大宽度，避免文字过长 */
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
     }
-    /* 响应式文字：自动适配屏幕大小 */
+    /* 文字组垂直排列 */
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
     .title {
       color: white;
-      font-size: 18vw; /* 响应式字号，屏幕越大字越大 */
+      font-size: 18vw;
       font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
       font-weight: 400;
       line-height: 1;
@@ -50,20 +53,26 @@
       font-weight: 200;
       line-height: 1.4;
     }
+    /* 联系方式：贴底 + 缩小字号 + 底部留白 */
     .contact {
-      margin-top: 40px;
+      margin-top: auto; /* 自动贴紧底部 */
+      padding-bottom: 24px; /* 不贴死屏幕，留一点间距 */
       color: white;
-      font-size: 2.8vw;
+      font-size: 14px; /* 字号大幅缩小 */
       font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
       font-weight: 200;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="title">Hi</div>
-    <div class="name">I’m Jiaqi</div>
-    <div class="desc">I'm a father, millionaire, law student and billionaire.</div>
+    <div class="text-group">
+      <div class="title">Hi</div>
+      <div class="name">I’m Jiaqi</div>
+      <div class="desc">I'm a father, millionaire, law student and billionaire.</div>
+    </div>
+    <!-- 联系方式自动贴底 -->
     <div class="contact">Please feel free to contact me: hecafa93@163.com</div>
   </div>
 </body>
